@@ -1,0 +1,39 @@
+.content {
+    display: block;
+}
+
+.linear {
+    display: inline-block;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #18795a;
+    height: 100px;
+}
+
+#mainTitle {
+    color: white;
+    padding: 15px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.sub-header {
+    width: calc(33.5% - 6px);
+    display: inline-block;
+    text-align: center;
+    margin-top: -5.5px;
+}
+
+.sub-header p {
+    text-transform: uppercase;
+    color: whitesmoke;
+    margin-top: 17px;
+}
+
+.selected {
+    height: 3px;
+    background: white;
+}
