@@ -7,45 +7,74 @@
     <link href="styles/normalize.css" rel="stylesheet"/>
     <link href="styles/styles.css" rel="stylesheet"/>
 
-
 </head>
-<body id="body">
+<body id="body" onload="onLoadPage();">
 
-<div class="content">
+<div class="content" ng-switch on="currentActionImg">
     <div class="header">
         <div id="header1">
-            <div id="left">
+            <div class="left">
                 <p id="mainTitle">WhatsApp</p>
             </div>
-            <div id="right">
+            <div id="right-header" class="right">
+                <img id="icon_menu" src="img/icon_menu.png"/>
 
+                <div class="inline hidden" id="action_switcher">
+                    <img ng-switch-when="contacts" id="icon_action2" src="img/icon_add_contacts.png"/>
+                    <img ng-switch-when="calls" id="icon_action3" src="img/icon_new_call.png"/>
+                    <img ng-switch-default id="icon_action1" src="img/icon_chats.png"/>
+                </div>
+
+                <img id="icon_search" src="img/icon_search.png"/>
             </div>
         </div>
         <div id="header2">
-            <div class="sub-header">
+            <div class="sub-header" ng-click="changeView('calls');">
                 <p>calls</p>
 
-                <div class="selected"></div>
+                <div class="notif-subheader">12</div>
+
+                <div ng-switch-when="calls" id="calls" class="hidden selected"></div>
             </div>
-            <div class="sub-header">
+            <div class="sub-header" ng-click="changeView('chats');">
                 <p>chats</p>
 
-                <div class="selected"></div>
+                <div class="notif-subheader">12</div>
+
+                <div ng-switch-default class="selected"></div>
             </div>
-            <div class="sub-header">
+            <div class="sub-header" ng-click="changeView('contacts');">
                 <p>contacts</p>
 
-                <div class="selected"></div>
+                <div class="notif-subheader">12</div>
+
+                <div ng-switch-when="contacts" id="contacts" class="hidden selected"></div>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div ng-switch-default>
+            <div ng-include="currentView"></div>
+        </div>
+        <div ng-switch-when="contacts">
+            <div ng-include="currentView">
+            </div>
+        </div>
+        <div ng-switch-when="calls">
+            <div ng-include="currentView"></div>
         </div>
     </div>
 
 </div>
 
 </body>
+
 <script type="text/javascript" src="scripts/angular.min.js"></script>
 <script type="text/javascript" src="scripts/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="scripts/angular-animate.min.js"></script>
 <script type="text/javascript" src="scripts/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="scripts/ng-embed.min.js"></script>
+
+<script type="text/javascript" src="scripts/app.js"></script>
 
 </html>

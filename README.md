@@ -9,3 +9,5 @@ Challenges:
 - Designing the interfaces to be responsive.
 - Extracting WhatsApp needed icons from the APK.
 - Loading javascript files without blocking the UI.
+- Loading three pages in parallel or according to selection? ng-switch remove and add the DOM elements,
+so I went to load the subviews using ng-switch and ng-include.

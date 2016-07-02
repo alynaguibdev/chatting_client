@@ -1,24 +1,45 @@
+@font-face {
+    font-family: Roboto-Light;
+    src: url(../fonts/Roboto-Light.ttf);
+    font-family: Roboto-Medium;
+    src: url(../fonts/Roboto-Medium.ttf);
+    font-family: RobotoMono-Regular;
+    src: url(../fonts/RobotoMono-Regular.ttf);
+}
+
+body {
+    font-family: RobotoMono-Regular;
+}
 .content {
     display: block;
 }
 
-.linear {
+.inline {
     display: inline-block;
+}
+
+.hidden {
+    display: none;
 }
 
 .header {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background-color: #075e54;
-    height: 100px;
-    box-shadow: inset;
+    height: 104px;
+    -webkit-box-shadow: -1px 2px 4px 0px #075e54;
+    -moz-box-shadow: -1px 2px 4px 0px #075e54;
+    box-shadow: -1px 2px 4px 0px #075e54;
 }
 
 #mainTitle {
     color: white;
     padding: 15px;
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #header2 {
@@ -42,18 +63,73 @@
     color: rgba(245, 245, 245, 0.62);
     margin-top: 17px;
     font-weight: bold;
+    display: inline-block;
+}
+
+.sub-header:hover {
+    background-color: rgba(255, 255, 255, 0.24);
 }
 
 .selected {
-    height: 6px;
+    height: 4px;
     background: white;
     border-bottom: 1px solid rgba(53, 62, 52, 0.28);
 }
 
-#left {
+.left {
     float: left;
 }
 
-#right {
+.right {
     float: right;
+}
+
+#right-header {
+    direction: rtl;
+    display: block;
+    margin: 0px 0px 0px 0px;
+}
+
+#right-header img {
+    padding: 10px 20px 10px 10px;
+    width: 30px;
+}
+
+#right-header img:hover {
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+.container {
+    padding: 10px;
+    position: relative;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.selected.ng-animate {
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 100ms;
+}
+
+.selected.ng-leave.ng-leave-active,
+.selected.ng-enter {
+    left: -50px;
+}
+
+.selected.ng-leave,
+.selected.ng-enter.ng-enter-active {
+    right: 0;
+}
+
+.notif-subheader {
+    border-radius: 50%;
+    padding: 8px;
+    background: #ffffff;
+    color: #075e54;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
 }
