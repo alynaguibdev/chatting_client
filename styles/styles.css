@@ -130,7 +130,7 @@ body {
     color: #075e54;
     text-align: center;
     font-size: 14px;
-    display: inline-block;
+    /*display: inline-block;*/
     margin-left: 10px;
     font-weight: bold;
 }
@@ -193,6 +193,10 @@ body {
     cursor: pointer;
 }
 
+.contact-details-last {
+    border-bottom: 0px solid rgba(153, 153, 153, 0.18);
+}
+
 .contact-details:hover {
     background-color: rgba(0, 0, 0, 0.03);
 }
@@ -204,4 +208,8 @@ body {
 
 .participant {
     font-weight: bold;
+}
+
+.call-type {
+    width: 14px;
 }

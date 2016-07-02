@@ -40,13 +40,18 @@ function onLoadPage() {
 
 var chattingApp = angular.module('chattingApp', ['ui.router', 'ngEmbed', 'ngAnimate']);
 
-chattingApp.run(function ($location, $rootScope, $state, $log, $window, $document) {
+chattingApp.run(function ($location, $rootScope, $state, $log, $window, $document, webservices) {
     $rootScope.currentActionImg = 'chats';
 
     $('#action_switcher').removeClass('hidden');
     $('#calls').removeClass('hidden');
     $('#contacts').removeClass('hidden');
 
+    $('#notif-num1').removeClass('hidden');
+    $('#notif-num2').removeClass('hidden');
+
+    $('#notif-num1').addClass('inline');
+    $('#notif-num2').addClass('inline');
 
     $rootScope.views = {
         chats: {
@@ -68,6 +73,19 @@ chattingApp.run(function ($location, $rootScope, $state, $log, $window, $documen
     $rootScope.currentMenu = $rootScope.views.chats.menu;
     $rootScope.currentActionImg = 'chats';
     $rootScope.currentView = $rootScope.views.chats.view;
+
+    webservices.getData('chats').then(function (res) {
+        $rootScope.views.chats.data = res;
+        $rootScope.views.chats.newMessages = res.newMessages;
+
+    });
+    webservices.getData('contacts').then(function (res) {
+        $rootScope.views.contacts.data = res.data;
+    });
+    webservices.getData('calls').then(function (res) {
+        $rootScope.views.calls.newCalls = res.newCalls;
+        $rootScope.views.calls.data = res.data;
+    });
 
     $rootScope.changeView = function (val) {
         $rootScope.currentActionImg = val;
@@ -113,8 +131,11 @@ chattingApp.directive('body', function ($compile, $rootScope, $window) {
 //////////////////////////////////services//////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////factories/////////////////////////////////////////////////////////////////////////////
-chattingApp.factory('webservices', ['$rootScope', '$log', '$http', '$q', function ($rootScope, $log, $http, $q) {
+chattingApp.factory('webservices', ['$rootScope', '$log', '$http', '$q', '$filter', function ($rootScope, $log, $http, $q, $filter) {
     return {
+        exceed1Day: function (val) {
+            return ((new Date().getTime()) - val) > 24 * 60 * 60 * 1000;
+        },
         get: function (url) {
             var deferred = $q.defer();
             $http({
@@ -134,6 +155,7 @@ chattingApp.factory('webservices', ['$rootScope', '$log', '$http', '$q', functio
         },
         getData: function (view) {
             var deferred = $q.defer();
+            var thisObj = this;
             switch (view) {
                 case 'chats':
                     this.get($rootScope.views.chats.mockURL).then(function (res) {
@@ -142,14 +164,16 @@ chattingApp.factory('webservices', ['$rootScope', '$log', '$http', '$q', functio
                     break;
                 case 'calls':
                     this.get($rootScope.views.calls.mockURL).then(function (res) {
-                        for (var v = 0; v < res.length; v++) {
-                            if (res[v].dir == 0) {
-                                res[v].call_type_img = 'img/call_missed.png';
-                            } else if (res[v].dir == 1) {
-                                res[v].call_type_img = 'img/call_out.png';
-                            } else if (res[v].dir == 2) {
-                                res[v].call_type_img = 'img/call_inc.png';
+                        for (var v = 0; v < res.data.length; v++) {
+                            if (res.data[v].dir == 0) {
+                                res.data[v].call_type_img = 'img/call_missed.png';
+                            } else if (res.data[v].dir == 1) {
+                                res.data[v].call_type_img = 'img/call_out.png';
+                            } else if (res.data[v].dir == 2) {
+                                res.data[v].call_type_img = 'img/call_inc.png';
                             }
+                            res.data[v].timeInFormat = thisObj.exceed1Day(res.data[v].time) ? ($filter('date')(res.data[v].time, 'MMMM d, h:mm a', '+02'))
+                                : ($filter('date')(res.data[v].time, 'h:mm a', '+02'));
                         }
                         deferred.resolve(res);
                     });
@@ -172,23 +196,18 @@ chattingApp.factory('webservices', ['$rootScope', '$log', '$http', '$q', functio
 
 chattingApp.controller('chats', ['$rootScope', '$log', '$scope', '$location', '$state', 'webservices', function ($rootScope, $log, $scope, $location, $state, webservices) {
 
-    webservices.getData('chats').then(function (res) {
 
-    });
 
 }]);
 
 chattingApp.controller('contacts', ['$rootScope', '$log', '$scope', '$location', '$state', 'webservices', function ($rootScope, $log, $scope, $location, $state, webservices) {
-    webservices.getData('contacts').then(function (res) {
 
-    });
 
 }]);
 
-chattingApp.controller('calls', ['$rootScope', '$log', '$scope', '$location', '$state', 'webservices', function ($rootScope, $log, $scope, $location, $state, webservices) {
-
-    webservices.getData('calls').then(function (res) {
-        $scope.calls = res;
-    });
+chattingApp.controller('calls', ['$rootScope', '$log', '$scope', '$location', '$state', 'webservices', '$timeout', function ($rootScope, $log, $scope, $location, $state, webservices, $timeout) {
+    $timeout(function () {
+        $rootScope.views.calls.newCalls = 0;
+    }, 1000);
 
 }]);

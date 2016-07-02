@@ -1,11 +1,31 @@
 [
   {
-    "img": "",
-    "lastMessage": "",
-    "participant": "",
-    "time": "",
-    "status": 0,
-    "isGroup": true,
-    "numNewMessages": 2
+    "chatHeadline": "Fox 1",
+    "isGroup": false,
+    "img": "img/avatar_contact.png",
+    "numNewMessages": 2,
+    "messages": [
+      {
+        "sender": "Fox 1",
+        "content": "hello",
+        "time": "1467429453746",
+        "status": 1,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "",
+        "content": "hello",
+        "time": "1467429453746",
+        "status": 1,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "Fox 1",
+        "content": "How are you?",
+        "time": "1467429453746",
+        "status": 0,
+        "img": "img/avatar_contact.png"
+      }
+    ]
   }
 ]

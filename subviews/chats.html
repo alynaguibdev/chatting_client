@@ -1,1 +1,19 @@
-<div ng-controller="chats"></div>
+<div ng-controller="chats">
+
+    <div ng-repeat="chat in views.chats.data" class="row">
+        <div class="contact-img inline">
+            <img ng-src="{{chat.img}}"/>
+        </div>
+        <div class="contact-details inline right" ng-class="$last ? 'contact-details-last' : ''">
+            <div class="contact-sub-details block">
+                <div class="inline left">
+                    <span class="block participant">{{chat.chatHeadline}}</span>
+                    <span class="block" style="margin-top: 5px; margin-bottom: 25px;"
+                          ng-bind-html="chat.lastMessage | embed">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

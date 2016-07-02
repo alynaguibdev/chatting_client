@@ -1,3 +1,6 @@
+{
+  "newCalls": 2,
+  "data":
 [
   {
     "img": "img/avatar_contact.png",
@@ -56,7 +59,7 @@
   {
     "img": "img/avatar_contact.png",
     "participant": "Fox 1",
-    "time": "1452117600000",
+    "time": "1467474731378",
     "dir": 0
   },
   {
@@ -66,3 +69,4 @@
     "dir": 2
   }
 ]
+}
