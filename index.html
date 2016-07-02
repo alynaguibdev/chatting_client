@@ -19,6 +19,11 @@
             <div id="right-header" class="right">
                 <img id="icon_menu" src="img/icon_menu.png"/>
 
+                <div class="menuContainer">
+                    <ui>
+                        <li ng-repeat="menuItem in currentMenu">{{menuItem}}</li>
+                    </ui>
+                </div>
                 <div class="inline hidden" id="action_switcher">
                     <img ng-switch-when="contacts" id="icon_action2" src="img/icon_add_contacts.png"/>
                     <img ng-switch-when="calls" id="icon_action3" src="img/icon_new_call.png"/>

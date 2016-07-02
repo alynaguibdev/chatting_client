@@ -1,1 +1,18 @@
-<div ng-controller="calls"></div>
+<div ng-controller="calls">
+    <div ng-repeat="call in calls" class="row">
+        <div class="contact-img inline">
+            <img ng-src="{{call.img}}"/>
+        </div>
+        <div class="contact-details inline right">
+            <div class="contact-sub-details block">
+                <div class="inline left">
+                    <span class="block participant">{{call.participant}}</span>
+                    <span class="block" style="margin-top: 5px; margin-bottom: 25px;">
+                        <img ng-src="{{call.call_type_img}}"
+                             class="inline"/>{{call.time | date:'MMMM d, h:mm a'}}</span>
+                </div>
+                <img class="notif-icon-row" src="img/icon_action_call_calls.png"/>
+            </div>
+        </div>
+    </div>
+</div>

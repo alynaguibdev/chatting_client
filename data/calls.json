@@ -1,8 +1,68 @@
 [
   {
-    "img": "",
-    "participant": "",
-    "time": "",
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 1",
+    "time": "1467429453746",
     "dir": 0
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 2",
+    "time": "1467429453746",
+    "dir": 1
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 3",
+    "time": "1452117600000",
+    "dir": 2
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 4",
+    "time": "1467429453746",
+    "dir": 0
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 5",
+    "time": "1467429453746",
+    "dir": 2
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 6",
+    "time": "1467429453746",
+    "dir": 0
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 7",
+    "time": "1467429453746",
+    "dir": 1
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 8",
+    "time": "1467429453746",
+    "dir": 2
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 9",
+    "time": "1452117600000",
+    "dir": 1
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 1",
+    "time": "1452117600000",
+    "dir": 0
+  },
+  {
+    "img": "img/avatar_contact.png",
+    "participant": "Fox 1",
+    "time": "1452117600000",
+    "dir": 2
   }
 ]
