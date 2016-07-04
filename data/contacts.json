@@ -3,32 +3,38 @@
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox 1",
-      "status": "Drawings :D opinions returned absolute in"
+      "status": "Drawings :D opinions returned absolute in",
+      "label": "0"
     },
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox 1",
-      "status": "Drawings me opinions returned absolute in"
+      "status": "Drawings me opinions returned absolute in",
+      "label": "0"
     },
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox random",
-      "status": "Drawings me opinions returned :) <3 in"
+      "status": "Drawings me opinions returned :) <3 in",
+      "label": "1"
     },
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox 1",
-      "status": "Drawings me opinions returned absolute in"
+      "status": "Drawings me opinions returned absolute in",
+      "label": "0"
     },
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox 1",
-      "status": "Drawings :( returned absolute in"
+      "status": "Drawings :( returned absolute in",
+      "label": "0"
     },
     {
       "img": "img/avatar_contact.png",
       "fullName": "Fox 1",
-      "status": "Drawings me opinions :/ absolute in"
+      "status": "Drawings me opinions :/ absolute in",
+      "label": "0"
     }
   ]
 }

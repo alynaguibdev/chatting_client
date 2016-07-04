@@ -6,9 +6,10 @@
         </div>
         <div class="contact-details inline right" ng-class="$last ? 'contact-details-last' : ''">
             <div class="contact-sub-details block">
-                <div class="inline left">
-                    <span class="block participant">{{contact.fullName}}</span>
-                    <span class="block" style="margin-top: 5px; margin-bottom: 25px;"
+                <div class="inline left contact-row">
+                    <span class="inline participant left">{{contact.fullName}}</span>
+                    <span class="inline contact-type right">{{contact.labelVal}}</span>
+                    <span class="block status"
                           ng-bind-html="contact.status | embed">
                     </span>
                 </div>

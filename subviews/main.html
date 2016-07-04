@@ -1,0 +1,63 @@
+<div class="content" body>
+    <div class="header">
+        <div id="header1">
+            <div class="left">
+                <p id="mainTitle">WhatsApp</p>
+            </div>
+            <div id="right-header" class="right">
+                <img id="icon_menu" src="img/icon_menu.png"/>
+
+                <div class="menuContainer">
+                    <ui>
+                        <li ng-repeat="menuItem in currentMenu">{{menuItem}}</li>
+                    </ui>
+                </div>
+                <div class="inline" id="action_switcher">
+                    <img ng-if="currentActionImg === 'contacts'" id="icon_action2" src="img/icon_add_contacts.png"/>
+                    <img ng-if="currentActionImg === 'calls'" id="icon_action3" src="img/icon_new_call.png"/>
+                    <img ng-if="currentActionImg === 'chats'" id="icon_action1" src="img/icon_chats.png"/>
+                </div>
+
+                <img id="icon_search" src="img/icon_search.png"/>
+            </div>
+        </div>
+        <div id="header2">
+            <div class="sub-header" ng-click="changeView('calls');">
+                <p>calls</p>
+
+                <div class="hidden notif-subheader" id="notif-num1" ng-if="$root.views.calls.newCalls > 0">
+                    {{$root.views.calls.newCalls}}
+                </div>
+
+                <div ng-if="currentActionImg === 'calls'" id="calls" class="selected"></div>
+            </div>
+            <div class="sub-header" ng-click="changeView('chats');">
+                <p>chats</p>
+
+                <div class="hidden notif-subheader" id="notif-num2" ng-if="$root.views.chats.newMessages > 0">
+                    {{$root.views.chats.newMessages}}
+                </div>
+
+                <div ng-if="currentActionImg === 'chats'" class="selected"></div>
+            </div>
+            <div class="sub-header" ng-click="changeView('contacts');">
+                <p>contacts</p>
+
+                <div ng-if="currentActionImg === 'contacts'" id="contacts" class="selected"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div ng-if="currentActionImg === 'chats'">
+            <div ng-include="currentView"></div>
+        </div>
+        <div ng-if="currentActionImg === 'contacts'">
+            <div ng-include="currentView">
+            </div>
+        </div>
+        <div ng-if="currentActionImg === 'calls'">
+            <div ng-include="currentView"></div>
+        </div>
+    </div>
+
+</div>

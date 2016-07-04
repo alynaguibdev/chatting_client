@@ -1,0 +1,50 @@
+<div class="content" body>
+    <div class="header detailed-header">
+        <div id="header1">
+            <div class="left back-container" ng-click="goToMain();">
+                <img src="img/icon_back.png"/>
+                <img class="detailed_user_img" ng-src="{{obj.img}}"/>
+            </div>
+            <div class="left detailed-contact">
+                <span class="block">{{obj.chatHeadline}}</span>
+                <span class="block">{{obj.part_str}}</span>
+            </div>
+            <div id="right-header" class="right">
+                <img id="icon_menu" src="img/icon_menu.png"/>
+
+                <div class="menuContainer">
+                    <ui>
+                        <li ng-repeat="menuItem in currentMenu" ng-click="callBack(menuItem.action)">
+                            {{menuItem.title}}
+                        </li>
+                    </ui>
+                </div>
+
+                <img id="icon_attach" src="img/icon_attach.png"/>
+                <img id="icon_search" src="img/icon_call.png"/>
+            </div>
+        </div>
+    </div>
+    <div class="container chat-container">
+        <div class="land">
+            <div ng-repeat="messageObj in obj.messages" class="block message" ng-class="messageObj.className">
+                {{messageObj.sender !== '' ? messageObj.sender + ':' : ''}}
+                <span ng-bind-html="messageObj.content | embed"></span>
+                <br/>
+            </div>
+        </div>
+        <div class="editor">
+            <div class="input-circle-pressed right">
+                <img src="img/input_circle_pressed.png"/>
+                <img id="overlay" src="img/mic_normal.png"/>
+            </div>
+            <div class="editor-container">
+                <img class="input_emoji" src="img/input_emoji.png"/>
+                <img class="input_cam" src="img/input_cam.png"/>
+                <input type="text" placeholder="Type a message" enter-event="bindMessage();" class="input left"
+                       name="message" ng-model="mInput"/>
+            </div>
+        </div>
+    </div>
+
+</div>

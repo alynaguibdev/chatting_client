@@ -11,3 +11,4 @@ Challenges:
 - Loading javascript files without blocking the UI.
 - Loading three pages in parallel or according to selection? ng-switch remove and add the DOM elements,
 so I went to load the subviews using ng-switch and ng-include.
+- ng-switch doesn't work with ui.router module, I went back to ng-if.

@@ -3,11 +3,14 @@
     "chatHeadline": "Fox 1",
     "isGroup": false,
     "img": "img/avatar_contact.png",
-    "numNewMessages": 2,
+    "numNewMessages": 1,
+    "participants": [
+      "Fox 1"
+    ],
     "messages": [
       {
         "sender": "Fox 1",
-        "content": "hello",
+        "content": "hello :D",
         "time": "1467429453746",
         "status": 1,
         "img": "img/avatar_contact.png"
@@ -21,6 +24,73 @@
       },
       {
         "sender": "Fox 1",
+        "content": "How are you? <3",
+        "time": "1467429453746",
+        "status": 1,
+        "img": "img/avatar_contact.png"
+      }
+    ]
+  },
+  {
+    "chatHeadline": "Group test 1",
+    "isGroup": true,
+    "img": "",
+    "participants": [
+      "Fox 1",
+      "Fox 2",
+      "Fox 3"
+    ],
+    "numNewMessages": 0,
+    "messages": [
+      {
+        "sender": "Fox 1",
+        "content": "hello",
+        "time": "1467429453746",
+        "status": 2,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "Fox 2",
+        "content": "hello",
+        "time": "1467429453746",
+        "status": 2,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "Fox 3",
+        "content": "How are you?",
+        "time": "1467429453746",
+        "status": 2,
+        "img": "img/avatar_contact.png"
+      }
+    ]
+  },
+  {
+    "chatHeadline": "Group test 2",
+    "isGroup": true,
+    "img": "",
+    "participants": [
+      "Tester 1",
+      "Tester 2",
+      "Tester 3"
+    ],
+    "messages": [
+      {
+        "sender": "Tester 1",
+        "content": "Hey guys !!!",
+        "time": "1467429453746",
+        "status": 1,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "",
+        "content": "hello",
+        "time": "1467429453746",
+        "status": 1,
+        "img": "img/avatar_contact.png"
+      },
+      {
+        "sender": "",
         "content": "How are you?",
         "time": "1467429453746",
         "status": 0,
